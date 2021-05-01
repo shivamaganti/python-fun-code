@@ -1,0 +1,11 @@
+import pikepdf
+from tqdm import tdqm
+passwords = [ line.strip() for kine in open("wordlist.txt")]
+
+for password in tqdm[passwords,"decrypting PDF"]:
+  try:
+    with pikepdf.open("sample.pdf",password-password) as pdf:
+      print("\n[+] password found:",password)
+      break
+  except pikepdf.qpdf.passwordError as e:
+    continue    
